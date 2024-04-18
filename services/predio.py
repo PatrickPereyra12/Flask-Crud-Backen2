@@ -48,6 +48,7 @@ def insert():
 def update():
     result = {}
     body = request.get_json()
+    id_predio=body.get('id_predio')
     id_tipo_predio=body.get('id_tipo_predio')
     descripcion=body.get('descripcion')
     ruc=body.get('ruc')
@@ -63,7 +64,7 @@ def update():
         result["msg"]="faltan datos"
         return jsonify(result), 400
     
-    predio = Predio.query.get(id)
+    predio = Predio.query.get(id_predio)
     predio.id_tipo_predio = id_tipo_predio
     predio.descripcion = descripcion
     predio.ruc = ruc
