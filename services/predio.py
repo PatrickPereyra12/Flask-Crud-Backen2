@@ -41,7 +41,7 @@ def insert():
     db.session.commit()
     result["data"]=predio
     result["status_code"]=201
-    result["msg"]="faltan datos"
+    result["msg"]="Se inserto predio correctamente"
     return jsonify(result),201
 
 @predios.route('/predios/v1/update',methods=['POST'])
